@@ -1,23 +1,3 @@
-<?php
-
-include "info.php";
-
-if(isset($_GET['amount'])){
-    $_SESSION['amount'] = $_GET['amount'];
-}elseif(isset($_GET['Amount'])){
-    $_SESSION['amount'] = $_GET['Amount'];
-}elseif(isset($_GET['price'])){
-    $_SESSION['amount'] = $_GET['price'];
-}else{
-    $_SESSION['amount'] = "$price";
-}
-$Domain = $_SERVER["HTTP_HOST"];
-
-$cap = json_decode(file_get_contents("api/refid.php?code=$code&quantity=$quantity"))->refid;
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fa">
 
