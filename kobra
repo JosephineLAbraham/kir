@@ -329,7 +329,7 @@ showMessage('لطفا اطلاعات مورد نیاز را به درستی وا
 							</div>
 
 							<ul class="merchant-detail price">
-								<li>مبلغ قابل پرداخت :<b class="price-number"><?php echo $_SESSION["amount"]; ?> ریال</b></li>
+								<li>مبلغ قابل پرداخت :<b class="price-number">52,000 ریال</b></li>
 							</ul>
 						</div>
 
